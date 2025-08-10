@@ -1,8 +1,12 @@
+import WelcomeScreen from "@/components/WelcomeScreen";
 
 export default function Home() {
   return (
-    <div>
+      <div>
+  
+      <WelcomeScreen/>
 
-    </div>
+      </div>
+    
   );
 }
