@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Github, User, FileText, Code } from 'lucide-react';
+import { Code2, Github, User, FileText, UserCheck } from 'lucide-react';
 
 const HeroSection = () => {
-  const MOCK_DATA = {
-    welcomeTexts: ["Welcome", "To", "My"],
-    titleTexts: ["Portfolio", "Website"],
+  const dados = {
+    welcomeTexts: ["Daniel", "Verissimo"],
+    titleTexts: ["Desenvolvedor", "Front-end"],
     icons: [Code2, User, Github]
   };
 
@@ -29,7 +29,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ staggerChildren: 0.1 }}
           >
-            {MOCK_DATA.icons.map((Icon, index) => (
+            {dados.icons.map((Icon, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const HeroSection = () => {
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold space-y-4 sm:space-y-6">
               <div className="mb-4 sm:mb-6">
-                {MOCK_DATA.welcomeTexts.map((text, index) => (
+                {dados.welcomeTexts.map((text, index) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -68,7 +68,7 @@ const HeroSection = () => {
                 ))}
               </div>
               <div>
-                {MOCK_DATA.titleTexts.map((text, index) => (
+                {dados.titleTexts.map((text, index) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -83,39 +83,41 @@ const HeroSection = () => {
             </h1>
           </motion.div>
 
-          {/* Buttons - Versão atualizada */}
+          {/* Buttons*/}
           <motion.div 
             className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 w-full max-w-md mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.6 }}
           >
-            <motion.a
-              href="https://drive.google.com/drive/u/2/folders/1-NsOj14ARCHzi-w-ku4aTw4oQ_ZkLJir"
-              className="w-full lg:w-auto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 pt-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <a 
+              href="https://drive.google.com/drive/u/2/folders/1-NsOj14ARCHzi-w-ku4aTw4oQ_ZkLJir" 
+              className="w-full sm:w-auto"
             >
-              <button className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl">
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+              <button className="w-full cursor-pointer sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium hover:shadow-lg transition-all hover:scale-[1.02] flex items-center gap-2">
+                <FileText className="w-5 h-5" /> Download CV
               </button>
-            </motion.a>
-            
-            <motion.a
-              href="#contact"
-              className="w-full lg:w-auto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            </a>
+            <a 
+              href="#contact" 
+              className="w-full sm:w-auto"
             >
-              <button className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10">
-                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> Contact
+              <button className="w-full cursor-pointer sm:w-auto px-6 py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium hover:bg-[#a855f7]/10 transition-all hover:scale-[1.02] flex items-center gap-2">
+                <UserCheck className="w-5 h-5" /> Contate Me
               </button>
-            </motion.a>
+            </a>
+          </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* gifzin do scroll*/}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

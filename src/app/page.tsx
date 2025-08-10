@@ -1,3 +1,4 @@
+import AboutSection from "@/components/About";
 import WelcomeScreen from "@/components/WelcomeScreen";
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
       <div>
   
       <WelcomeScreen/>
-
+      <AboutSection/>
       </div>
     
   );
