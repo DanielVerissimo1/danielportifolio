@@ -171,14 +171,14 @@ const Portfolio = () => {
       <div className="w-full">
         {/* AppBar substituto */}
         <div className="relative bg-transparent rounded-2xl border border-white/10 mb-6 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10 backdrop-blur-sm border"></div>
           
           <div className="relative flex">
-            {['Projects', 'Certificates', 'Tech Stack'].map((label, index) => (
+            {['Projetos', 'Certificações', 'Tecnologias'].map((label, index) => (
               <button
                 key={index}
                 onClick={() => handleChange(index)}
-                className={`flex-1 py-5 px-0 text-center transition-all duration-300 ${
+                className={`flex-1 py-5 px-0 text-center transition-all duration-300 rounded-2xl m-2 ${
                   value === index 
                     ? 'text-white bg-gradient-to-br from-purple-500/20 to-blue-500/20 shadow-lg'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
