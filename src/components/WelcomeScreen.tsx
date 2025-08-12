@@ -99,7 +99,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <a 
-              href="https://drive.google.com/drive/u/2/folders/1-NsOj14ARCHzi-w-ku4aTw4oQ_ZkLJir" 
+             href="/Daniel Verissimo - Currículo (1).pdf"
+              download
               className="w-full sm:w-auto"
             >
               <button className="w-full cursor-pointer sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium hover:shadow-lg transition-all hover:scale-[1.02] flex items-center gap-2">
