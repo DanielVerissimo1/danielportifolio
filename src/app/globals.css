@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @layer base {
   * {
@@ -137,12 +138,12 @@
     animation: shine 1.5s ease-in-out infinite;
   }
 
-  /* Otimização para animações */
+  
   [data-aos] {
     will-change: transform, opacity;
   }
 
-  /* Grid pattern para o background animado */
+
   .bg-grid-pattern {
     background-image: 
       linear-gradient(to right, currentColor 1px, transparent 1px),
@@ -150,5 +151,4 @@
     background-size: 40px 40px;
   }
 
-  
 }

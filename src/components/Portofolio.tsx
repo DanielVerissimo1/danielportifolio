@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Code, Award, Boxes } from "lucide-react";
-import CardProject from "./CardProject";
+import  CardProject  from "./CardProject";
 import TechStackIcon from "./TechStackIcon";
 import Certificate from "./Certificate";
 
@@ -30,22 +30,43 @@ interface TechStack {
 const mockProjects: Project[] = [
   {
     id: 1,
-    Img: "/projects/project1.jpg",
-    Title: "E-commerce Platform",
-    Description: "Plataforma de e-commerce completa com carrinho de compras e checkout",
-    Link: "https://example.com/ecommerce",
+    Img: "/amotur.jpeg",
+    Title: "Mapa interativo - AmoTur",
+    Description: "Desenvolvido em colaboração com a Squad do Amontada Valley, este projeto foi criado para atender a uma demanda real da Associação de Turismo Amotur.",
+    Link: "https://amotur-k1qt.vercel.app/",
   },
+  {
+    id: 2,
+    Img: "/cafearoma.jpeg",
+    Title: "Site - Café Aroma",
+    Description: "Site completo desenvolvido para o Café Aroma, com foco em navegação intuitiva, pedidos online, reserva de mesas e loja virtual.",
+    Link: "https://danielsantoss1200.wixsite.com/my-site-1",
+  },
+  {
+    id: 3,
+    Img: "/rio.jpeg",
+    Title: "Landing Page - Projeto Rio Aracatiaçu",
+    Description: "Landing page desenvolvida para o projeto Rio Aracatiaçu: Passado e Futuro Sustentável, apresentada no Ceará Científico 2025. A proposta uniu design, educação ambiental e engajamento comunitário para promover a preservação do rio em Amontada-CE.",
+    Link: "https://rio-aracatia-u.vercel.app/",
+  },
+  {
+    id: 4,
+    Img: "/briso.png",
+    Title: "Brisô Delivery",
+    Description: "Brisô Delivery é uma plataforma que conecta moradores e turistas de Icaraí de Amontada a comércios e serviços locais. Criado para resolver a dificuldade de encontrar entregas e estabelecimentos, antes feitos apenas por indicações informais.",
+    Link: "https://briso-delivery.vercel.app/",
+  }
   
 ];
 
 const mockCertificates: Certificate[] = [
   {
     id: 1,
-    Img: "/InovationCertificado.pdf",
+    Img: "/InovationCertificado.png",
   },
   {
     id: 2,
-    Img: "/aws.pdf",
+    Img: "/aws.png",
   },
 ];
 
@@ -158,7 +179,7 @@ const Portfolio = () => {
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   return (
-    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portfolio">
+    <div className="md:px-[10%] px-[5%] w-full z-1000 sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="portfolio">
       <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
         <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
           Mostruário de Portfólio
@@ -171,14 +192,14 @@ const Portfolio = () => {
       <div className="w-full">
         {/* AppBar substituto */}
         <div className="relative bg-transparent rounded-2xl border border-white/10 mb-6 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10 backdrop-blur-sm border"></div>
           
           <div className="relative flex">
-            {['Projects', 'Certificates', 'Tech Stack'].map((label, index) => (
+            {['Projetos', 'Certificações', 'Tecnologias'].map((label, index) => (
               <button
                 key={index}
                 onClick={() => handleChange(index)}
-                className={`flex-1 py-5 px-0 text-center transition-all duration-300 ${
+                className={`flex-1 py-5 px-0 text-center transition-all duration-300 rounded-2xl m-2 ${
                   value === index 
                     ? 'text-white bg-gradient-to-br from-purple-500/20 to-blue-500/20 shadow-lg'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
@@ -197,7 +218,7 @@ const Portfolio = () => {
 
         {/* Conteúdo das abas */}
         <TabPanel value={value} index={0}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
+          <div className="container z-100 mx-auto flex justify-center items-center overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
               {displayedProjects.map((project, index) => (
                 <div
@@ -270,4 +291,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Portfolio; 
