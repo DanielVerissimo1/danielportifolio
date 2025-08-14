@@ -221,10 +221,6 @@ const AboutSection = () => {
             key={stat.label}  
             variants={itemVariants}
             custom={stat.delay}
-            whileHover={{ 
-              y: -5,
-              boxShadow: "0 10px 25px -5px rgba(168, 85, 247, 0.2)"
-            }}
             transition={{ type: "spring", stiffness: 300, damping: 10 } as Transition}
             className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-[#a855f7]/50 transition-all"
           >

@@ -1,82 +1,127 @@
-"use client"
-
-import type React from "react"
-import { useState } from "react"
-import { X, Maximize2 } from "lucide-react"
+import React, { useState } from "react";
+import { Modal, IconButton, Box } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
 
 interface CertificateProps {
-  ImgSertif: string
+  ImgSertif: string; 
 }
 
 const Certificate: React.FC<CertificateProps> = ({ ImgSertif }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-  }
-
-  const imageSource = ImgSertif || "/formal-certificate.png"
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
-    <div className="w-full">
-      {/* Thumbnail Container */}
-      <div className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl group cursor-pointer">
-        {/* Certificate Image with Initial Filter */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-black/10 z-10"></div>
-          <img
-            src={imageSource || "/placeholder.svg"}
-            alt="Certificate"
-            className="w-full h-64 block object-contain contrast-110 brightness-90 saturate-110 transition-all duration-300 group-hover:contrast-105 group-hover:brightness-100 group-hover:saturate-110"
-            onClick={handleOpen}
-          />
-        </div>
-
-        {/* Hover Overlay */}
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer z-20"
-          onClick={handleOpen}
+    <Box sx={{ width: "100%" }}>
+      
+      <Box
+        sx={{
+          position: "relative",
+          borderRadius: "8px",
+          overflow: "hidden",
+          cursor: "pointer",
+          boxShadow: 1,
+          transition: "transform 0.2s",
+          "&:hover": {
+            transform: "scale(1.02)",
+            boxShadow: 3,
+          },
+        }}
+        onClick={handleOpen}
+      >
+        <img
+          src={ImgSertif}
+          alt="Certificate"
+          style={{
+            width: "100%",
+            height: "300px",
+            display: "block",
+            objectFit: "cover"
+          }}
+        />
+        
+        
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            bgcolor: "rgba(0,0,0,0.3)",
+            opacity: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transition: "opacity 0.2s",
+            "&:hover": {
+              opacity: 1,
+            },
+          }}
         >
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <div className="text-center text-white">
-              <Maximize2 size={40} className="mx-auto mb-2 drop-shadow-md" />
-              <h6 className="text-lg font-semibold drop-shadow-md">View Certificate</h6>
-            </div>
-          </div>
-        </div>
-      </div>
+          <FullscreenIcon sx={{ color: "white", fontSize: 40 }} />
+        </Box>
+      </Box>
 
-      {/* Modal */}
-      {open && (
-        <div className="fixed inset-0 z-[9999]  bg-black/95 backdrop-blur-sm">
-          <div className="w-full h-full flex items-center justify-center p-8">
-            {/* Close Button */}
-            <button
-              onClick={handleClose}
-              className="absolute right-6 top-6 text-white bg-black/60 hover:bg-black/80 z-10 p-3 rounded-full transition-all duration-200 hover:scale-110"
-            >
-              <X size={28} />
-            </button>
+     
+      <Modal
+        open={open}
+        onClose={handleClose}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        BackdropProps={{
+          sx: {
+            backgroundColor: "rgba(0,0,0,0.9)",
+          },
+        }}
+      >
+        <Box sx={{ position: "relative", outline: "none" }}>
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: "white",
+              bgcolor: "rgba(0,0,0,0.6)",
+              "&:hover": {
+                bgcolor: "rgba(0,0,0,0.8)",
+              },
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+          
+          <Box
+            sx={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              overflow: "auto",
+              bgcolor: "rgba(99, 102, 241, 0.5)",
+              borderRadius: "8px",
+              p: 1,
+            }}
+          >
+            <img
+              src={ImgSertif}
+              alt="Certificado em Full View"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                maxHeight: "85vh",
+              }}
+            />
+          </Box>
+        </Box>
+      </Modal>
+    </Box>
+  );
+};
 
-            <div className="relative w-full h-full flex items-center justify-center">
-              <img
-                src={imageSource || "/placeholder.svg"}
-                alt="Certificate Full View"
-                className="max-w-full max-h-full w-auto h-auto object-contain shadow-2xl rounded-lg"
-                style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-              />
-            </div>
-          </div>
-
-          <div className="absolute inset-0 -z-10" onClick={handleClose} />
-        </div>
-      )}
-    </div>
-  )
-}
-
-export default Certificate
+export default Certificate;
