@@ -199,7 +199,7 @@ const Portfolio = () => {
               <button
                 key={index}
                 onClick={() => handleChange(index)}
-                className={`flex-1 py-5 px-0 text-center transition-all duration-300 rounded-2xl m-2 ${
+                className={`flex-1 py-5 px-0 text-center transition-all duration-300 rounded-2xl m-2 cursor-pointer ${
                   value === index 
                     ? 'text-white bg-gradient-to-br from-purple-500/20 to-blue-500/20 shadow-lg'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
@@ -218,7 +218,7 @@ const Portfolio = () => {
 
         {/* Conteúdo das abas */}
         <TabPanel value={value} index={0}>
-          <div className="container z-100 mx-auto flex justify-center items-center overflow-hidden">
+          <div className="container z-100 mx-auto flex justify-center items-center overflow-hidden ">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
               {displayedProjects.map((project, index) => (
                 <div
@@ -238,7 +238,7 @@ const Portfolio = () => {
             </div>
           </div>
           {projects.length > initialItems && (
-            <div className="mt-6 w-full flex justify-start">
+            <div className="mt-6 w-full flex justify-start cursor-pointer">
               <ToggleButton
                 onClick={() => toggleShowMore('projects')}
                 isShowingMore={showAllProjects}
@@ -248,7 +248,7 @@ const Portfolio = () => {
         </TabPanel>
 
         <TabPanel value={value} index={1}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
+          <div className="container mx-auto flex justify-center items-center overflow-hidden ">
             <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
               {displayedCertificates.map((certificate, index) => (
                 <div

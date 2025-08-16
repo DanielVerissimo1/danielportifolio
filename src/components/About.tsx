@@ -154,7 +154,7 @@ const AboutSection = () => {
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 } as Transition}
             >
-              <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium hover:shadow-lg transition-all flex items-center gap-2">
+              <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer">
                 <UserCheck className="w-5 h-5" /> Contate Me
               </button>
             </motion.a>
@@ -221,12 +221,8 @@ const AboutSection = () => {
             key={stat.label}  
             variants={itemVariants}
             custom={stat.delay}
-            whileHover={{ 
-              y: -5,
-              boxShadow: "0 10px 25px -5px rgba(168, 85, 247, 0.2)"
-            }}
             transition={{ type: "spring", stiffness: 300, damping: 10 } as Transition}
-            className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-[#a855f7]/50 transition-all"
+            className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-[#a855f7]/50 transition-all transition-discrete"
           >
             <div className="flex items-center justify-start mb-4">
               <motion.div 
