@@ -27,7 +27,7 @@ const socialLinks: SocialLink[] = [
     displayName: "LinkedIn",
     subText: "Vamos conectar",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/daniel-verissimo/",
+    url: "https://linkedin.com/in/daniel-verissimo",
     color: "#0A66C2",
     gradient: "from-[#0A66C2] to-[#0077B5]",
     isPrimary: true,

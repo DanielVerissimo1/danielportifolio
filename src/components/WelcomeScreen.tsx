@@ -2,15 +2,19 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Github, User, FileText, UserCheck, Linkedin, Instagram } from 'lucide-react';
+import {  Github, FileText, UserCheck, Linkedin, Mail } from 'lucide-react';
 
 const HeroSection = () => {
   const dados = {
     welcomeTexts: ["Daniel", "Verissimo"],
     titleTexts: ["Desenvolvedor", "Front-end"],
-    icons: [Instagram, Linkedin, Github],
-    href: ["kkkkkkk","",""]
-  };
+    icons: [Mail, Linkedin, Github],
+    hrefs: [
+      "mailto:danielsantoss1300@gamil.com", 
+      "https://linkedin.com/in/daniel-verissimo",
+      "https://github.com/DanielVerissimo1"
+    ]
+  }; 
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
@@ -38,10 +42,11 @@ const HeroSection = () => {
                 transition={{ delay: index * 0.2, duration: 0.6 }}
               >
                 <div className="relative cursor-pointer group hover:scale-110 transition-transform duration-300">
-                  <div className="absolute  cursor-pointer -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300" />
+                  <div className="absolute cursor-pointer -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300" />
                   <div className="relative p-3 sm:p-4 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
-                    {/* <a href={`${href}`}> */}
-                    <Icon className="w-6 h-6 sm:w-7 cursor-pointer sm:h-7 md:w-8 md:h-8 text-white" />
+                    <a href={dados.hrefs[index]} target="_blank" rel="noopener noreferrer">
+                      <Icon className="w-6 h-6 sm:w-7 cursor-pointer sm:h-7 md:w-8 md:h-8 text-white" />
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -55,7 +60,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold space-y-4 sm:space-y-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
               <div className="mb-4 sm:mb-6">
                 {dados.welcomeTexts.map((text, index) => (
                   <motion.span
@@ -69,7 +74,7 @@ const HeroSection = () => {
                   </motion.span>
                 ))}
               </div>
-              <div>
+              <div className="flex flex-wrap justify-center">
                 {dados.titleTexts.map((text, index) => (
                   <motion.span
                     key={index}
@@ -99,7 +104,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <a 
-             href="/Daniel Verissimo - Currículo (1).pdf"
+              href="/Daniel Verissimo - Currículo (1).pdf"
               download
               className="w-full sm:w-auto"
             >
@@ -108,7 +113,7 @@ const HeroSection = () => {
               </button>
             </a>
             <a 
-              href="#contact" 
+              href="#contato" 
               className="w-full sm:w-auto"
             >
               <button className="w-full cursor-pointer sm:w-auto px-6 py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium hover:bg-[#a855f7]/10 transition-all hover:scale-[1.02] flex items-center gap-2">
@@ -120,7 +125,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* gifzin do scroll*/}
+      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
