@@ -2,15 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Github, User, FileText, UserCheck, Linkedin, Instagram } from 'lucide-react';
+import {  Github, FileText, UserCheck, Linkedin, Mail } from 'lucide-react';
 
 const HeroSection = () => {
   const dados = {
     welcomeTexts: ["Daniel", "Verissimo"],
     titleTexts: ["Desenvolvedor", "Front-end"],
-    icons: [Instagram, Linkedin, Github],
-    href: ["kkkkkkk","",""]
-  };
+    icons: [Mail, Linkedin, Github],
+    href: ["","",""]
+  }; 
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
@@ -40,8 +40,10 @@ const HeroSection = () => {
                 <div className="relative cursor-pointer group hover:scale-110 transition-transform duration-300">
                   <div className="absolute  cursor-pointer -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300" />
                   <div className="relative p-3 sm:p-4 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
-                    {/* <a href={`${href}`}> */}
-                    <Icon className="w-6 h-6 sm:w-7 cursor-pointer sm:h-7 md:w-8 md:h-8 text-white" />
+                    
+                    <a href="">
+                      <Icon className="w-6 h-6 sm:w-7 cursor-pointer sm:h-7 md:w-8 md:h-8 text-white" />
+                    </a>
                   </div>
                 </div>
               </motion.div>

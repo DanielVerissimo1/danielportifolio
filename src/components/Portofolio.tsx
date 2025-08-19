@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Code, Award, Boxes } from "lucide-react";
-import  CardProject  from "./CardProject";
+import CardProject from "./CardProject";
 import TechStackIcon from "./TechStackIcon";
 import Certificate from "./Certificate";
 
@@ -44,10 +44,10 @@ const mockProjects: Project[] = [
   },
   {
     id: 3,
-    Img: "/rio.jpeg",
-    Title: "Landing Page - Projeto Rio Aracatiaçu",
-    Description: "Landing page desenvolvida para o projeto Rio Aracatiaçu: Passado e Futuro Sustentável, apresentada no Ceará Científico 2025. A proposta uniu design, educação ambiental e engajamento comunitário para promover a preservação do rio em Amontada-CE.",
-    Link: "https://rio-aracatia-u.vercel.app/",
+    Img: "/github.png",
+    Title: "GitHub Explorer",
+    Description: "GitHub Explorer é uma aplicação que permite pesquisar repositórios e perfis do GitHub de forma rápida e intuitiva. Com ele, é possível visualizar informações detalhadas dos projetos, conferir o perfil dos desenvolvedores e explorar conteúdos diretamente pela interface da aplicação.",
+    Link: "https://explorerepositorios.vercel.app/",
   },
   {
     id: 4,
@@ -55,8 +55,21 @@ const mockProjects: Project[] = [
     Title: "Brisô Delivery",
     Description: "Brisô Delivery é uma plataforma que conecta moradores e turistas de Icaraí de Amontada a comércios e serviços locais. Criado para resolver a dificuldade de encontrar entregas e estabelecimentos, antes feitos apenas por indicações informais.",
     Link: "https://briso-delivery.vercel.app/",
+  },
+  {
+    id: 5,
+    Img: "/todo.png",
+    Title: "To-Do List",
+    Description: "To-Do List é uma aplicação simples e eficiente para organizar tarefas diárias. Desenvolvida com foco em praticidade, ela armazena os dados diretamente no navegador utilizando localStorage, garantindo que as tarefas sejam salvas mesmo após fechar a página.",
+    Link: "https://to-do-list-kappa-jet.vercel.app/",
+  },
+  {
+    id: 6,
+    Img: "/rio.jpeg",
+    Title: "Landing Page - Projeto Rio Aracatiaçu",
+    Description: "Landing page desenvolvida para o projeto Rio Aracatiaçu: Passado e Futuro Sustentável, apresentada no Ceará Científico 2025. A proposta uniu design, educação ambiental e engajamento comunitário para promover a preservação do rio em Amontada-CE.",
+    Link: "https://rio-aracatia-u.vercel.app/",
   }
-  
 ];
 
 const mockCertificates: Certificate[] = [
@@ -67,6 +80,10 @@ const mockCertificates: Certificate[] = [
   {
     id: 2,
     Img: "/aws.png",
+  },
+  {
+    id: 3,
+    Img: "/google.png",
   },
 ];
 
@@ -222,7 +239,7 @@ const Portfolio = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
               {displayedProjects.map((project, index) => (
                 <div
-                  key={project.id || index}
+                  key={`project-${project.id}`}
                   data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                   data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                 >
@@ -252,7 +269,7 @@ const Portfolio = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
               {displayedCertificates.map((certificate, index) => (
                 <div
-                  key={certificate.id || index}
+                  key={`certificate-${certificate.id}`} 
                   data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                   data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                 >
@@ -276,7 +293,7 @@ const Portfolio = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
               {techStacks.map((stack, index) => (
                 <div
-                  key={index}
+                  key={`tech-${index}`}
                   data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                   data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                 >
@@ -291,4 +308,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio; 
+export default Portfolio;

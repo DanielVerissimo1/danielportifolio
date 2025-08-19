@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ExternalLink} from 'lucide-react';
 
 interface CardProjectProps {
   Img: string;
