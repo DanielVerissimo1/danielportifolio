@@ -1,23 +1,19 @@
 'use client'
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 
-interface NavItem {
-  href: string;
-  label: string;
-}
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
   
-  const navItems: NavItem[] = [
+  const navItems = useMemo(() => [
     { href: "#hero", label: "Inicio" },
     { href: "#about", label: "Sobre" },
     { href: "#portfolio", label: "Portfolio" },
     { href: "#contato", label: "Contato" },
-  ];
+  ], []); // Array vazio como dependência pois navItems nunca muda
   
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +39,7 @@ const Navbar = () => {
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]); // Adicionado navItems como dependência
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';

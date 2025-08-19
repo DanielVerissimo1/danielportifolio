@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal, IconButton, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import Image from "next/image";
 
 interface CertificateProps {
   ImgSertif: string; 
@@ -28,16 +29,15 @@ const Certificate: React.FC<CertificateProps> = ({ ImgSertif }) => {
             transform: "scale(1.02)",
             boxShadow: 3,
           },
+          height: "300px", // Adicionado para o container ter altura fixa
         }}
         onClick={handleOpen}
       >
-        <img
+        <Image
           src={ImgSertif}
           alt="Certificate"
+          fill
           style={{
-            width: "100%",
-            height: "300px",
-            display: "block",
             objectFit: "cover"
           }}
         />
@@ -92,6 +92,7 @@ const Certificate: React.FC<CertificateProps> = ({ ImgSertif }) => {
               "&:hover": {
                 bgcolor: "rgba(0,0,0,0.8)",
               },
+              zIndex: 1,
             }}
           >
             <CloseIcon />
@@ -99,22 +100,21 @@ const Certificate: React.FC<CertificateProps> = ({ ImgSertif }) => {
           
           <Box
             sx={{
-              maxWidth: "90vw",
-              maxHeight: "90vh",
+              position: "relative",
+              width: "90vw",
+              height: "90vh",
               overflow: "auto",
               bgcolor: "rgba(99, 102, 241, 0.5)",
               borderRadius: "8px",
               p: 1,
             }}
           >
-            <img
+            <Image
               src={ImgSertif}
               alt="Certificado em Full View"
+              fill
               style={{
-                display: "block",
-                width: "100%",
-                height: "auto",
-                maxHeight: "85vh",
+                objectFit: "contain",
               }}
             />
           </Box>

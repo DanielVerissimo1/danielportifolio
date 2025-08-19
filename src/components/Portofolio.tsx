@@ -7,7 +7,6 @@ import CardProject from "./CardProject";
 import TechStackIcon from "./TechStackIcon";
 import Certificate from "./Certificate";
 
-// Tipos TypeScript
 interface Project {
   id: number;
   Img: string;
@@ -120,7 +119,7 @@ const ToggleButton = ({
     className="px-3 py-1.5 text-slate-300 hover:text-white text-sm font-medium transition-all duration-300 ease-in-out flex items-center gap-2 bg-white/5 hover:bg-white/10 rounded-md border border-white/10 hover:border-white/20 backdrop-blur-sm group relative overflow-hidden"
   >
     <span className="relative z-10 flex items-center gap-2">
-      {isShowingMore ? "See Less" : "See More"}
+      {isShowingMore ? "Ver Menos" : "Ver Mais"}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

@@ -1,5 +1,6 @@
 import React from 'react';
-import { ExternalLink} from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 interface CardProjectProps {
   Img: string;
@@ -9,7 +10,7 @@ interface CardProjectProps {
   id?: string;
 }
 
-const CardProject: React.FC<CardProjectProps> = ({ Img, Title, Description, Link: ProjectLink, id }) => {
+const CardProject: React.FC<CardProjectProps> = ({ Img, Title, Description, Link: ProjectLink }) => {
 
   return (
     <div className="group relative w-full h-full">
@@ -21,10 +22,11 @@ const CardProject: React.FC<CardProjectProps> = ({ Img, Title, Description, Link
         <div className="relative h-full flex flex-col p-5 z-10">
           {/* Imagem do projeto */}
           <div className="relative overflow-hidden rounded-lg aspect-video">
-            <img
+            <Image
               src={Img}
               alt={Title}
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              fill
+              className="object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
           </div>
           

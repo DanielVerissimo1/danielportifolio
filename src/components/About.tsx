@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useEffect, useMemo } from 'react';
-import { Code, Heart, Globe, Sparkles, UserCheck, ArrowUpRight } from 'lucide-react';
+import { Code, Heart, Globe, Sparkles, UserCheck} from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Image from 'next/image'; 
 
 const AboutSection = () => {
   useEffect(() => {
@@ -106,7 +107,7 @@ const AboutSection = () => {
             <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#a855f7]/20 to-[#6366f1]/20 rounded-full blur-lg"></div>
             
             <blockquote className="text-gray-300 italic font-medium text-sm relative z-10 pl-6">
-              "Aproveitando a IA como uma ferramenta profissional, não como um substituto."
+              &ldquo;Aproveitando a IA como uma ferramenta profissional, não como um substituto.&rdquo;
             </blockquote>
           </div>
 
@@ -149,13 +150,14 @@ const AboutSection = () => {
             </div>
 
             <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105 relative">
                 <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
                 
-                <img
+                <Image
                   src="/img-Daniel.png"
                   alt="Profile"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-all duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
 

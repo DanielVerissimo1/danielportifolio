@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useMemo } from "react";
 
 const AnimatedBackgroundV2 = () => {
   const blobRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const initialPositions = [
+
+  // Memoizar as posições iniciais para evitar recriação a cada render
+  const initialPositions = useMemo(() => [
     { x: -4, y: 0 },
     { x: -4, y: 0 },
     { x: 20, y: -8 },
     { x: 20, y: -8 },
-  ];
+  ], []);
 
   // Função para lidar com as refs corretamente
   const setBlobRef = (index: number) => (ref: HTMLDivElement | null) => {
@@ -17,27 +19,22 @@ const AnimatedBackgroundV2 = () => {
   };
 
   useEffect(() => {
-    let currentScroll = 0;
     let requestId: number;
 
     const handleScroll = () => {
       const newScroll = window.pageYOffset;
-      const scrollDelta = newScroll - currentScroll;
-      currentScroll = newScroll;
 
       blobRefs.current.forEach((blob, index) => {
         if (!blob) return;
 
         const initialPos = initialPositions[index];
 
-     
         const xOffset = Math.sin(newScroll / 100 + index * 0.5) * 340; 
         const yOffset = Math.cos(newScroll / 100 + index * 0.5) * 40; 
 
         const x = initialPos.x + xOffset;
         const y = initialPos.y + yOffset;
 
-      
         blob.style.transform = `translate(${x}px, ${y}px)`;
         blob.style.transition = "transform 1.4s ease-out";
       });
@@ -50,7 +47,7 @@ const AnimatedBackgroundV2 = () => {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(requestId);
     };
-  }, []);
+  }, [initialPositions]);
 
   return (
     <div className="fixed inset-0  pointer-events-none">

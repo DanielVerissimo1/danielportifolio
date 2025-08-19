@@ -60,7 +60,7 @@ const ContactForm = () => {
       });
 
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch {
       Swal.fire({
         title: 'Erro!',
         text: 'Ocorreu um problema ao enviar sua mensagem',
