@@ -88,7 +88,7 @@ const Navbar = () => {
               {navigationItems.map((item) => (
                 <button key={item.id} onClick={() => navigateToSection(item.id)} className="group relative py-2">
                   <span
-                    className={`text-base font-medium transition-all duration-300 ${
+                    className={`text-base font-medium transition-all duration-300 cursor-pointer ${
                       currentSection === item.id ? "text-white" : "text-gray-300 group-hover:text-white"
                     }`}
                   >
