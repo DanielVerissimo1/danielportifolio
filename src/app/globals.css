@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
 @layer base {
   * {
     margin: 0;
@@ -138,11 +140,9 @@
     animation: shine 1.5s ease-in-out infinite;
   }
 
-  
   [data-aos] {
     will-change: transform, opacity;
   }
-
 
   .bg-grid-pattern {
     background-image: 

@@ -104,7 +104,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <a 
-              href="/Daniel Verissimo - Currículo.pdf"
+              href="/Daniel Verissimo - Currículo (1).pdf"
               download
               className="w-full sm:w-auto"
             >

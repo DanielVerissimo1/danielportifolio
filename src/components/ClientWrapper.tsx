@@ -1,5 +1,4 @@
 'use client'
-
 import Navbar from "@/components/NavBar";
 import AnimatedBackgroundV2 from './AnimatedBackground';
 import Footer from "@/components/Footer";
