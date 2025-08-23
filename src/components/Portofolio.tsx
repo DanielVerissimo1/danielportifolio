@@ -108,10 +108,7 @@ const techStacks: TechStack[] = [
   { icon: "/wordpress.svg", language: "Wordpress" },
   { icon: "/wix.svg", language: "Wix" },
   { icon: "/figma.svg", language: "Figma" },
-  { icon: "/vercel.svg", language: "Vercel" },
-  { icon: "/git.svg", language: "Git" },
-  { icon: "/github.svg", language: "GitHub" },
-  { icon: "/linux.svg", language: "Linux" }
+  { icon: "/vercel.svg", language: "Vercel" }
 ];
 
 const ToggleButton = ({ 
