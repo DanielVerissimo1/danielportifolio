@@ -46,7 +46,7 @@ const mockProjects: Project[] = [
     Img: "/portfolio.png",
     Title: "Portfólio Pessoal",
     Description: "Portfólio Pessoal desenvolvido para apresentar meus projetos, habilidades e experiências de forma clara e organizada. A aplicação conta com um design responsivo e moderno, permitindo que qualquer pessoa conheça meu trabalho de maneira intuitiva.",
-    Link: "",
+    Link: "https://daniel-verissimodev.vercel.app/",
   },
   {
     id: 4,
@@ -97,14 +97,21 @@ const techStacks: TechStack[] = [
   { icon: "/html.svg", language: "HTML" },
   { icon: "/css.svg", language: "CSS" },
   { icon: "/javascript.svg", language: "JavaScript" },
+  { icon: "/typescript.svg", language: "TypeScript" },
   { icon: "/reactjs.svg", language: "React" },
+  { icon: "/vite.svg", language: "Vite" },
   { icon: "/next.svg", language: "Next.js" },
   { icon: "/nodejs.svg", language: "Node.js" },
   { icon: "/tailwind.svg", language: "Tailwind CSS" },
-  { icon: "/bootstrap.svg", language: "Bootstrap" },
   { icon: "/MUI.svg", language: "Material UI" },
-  { icon: "/vite.svg", language: "Vite" },
-  { icon: "/vercel.svg", language: "Vercel" }
+  { icon: "/bootstrap.svg", language: "Bootstrap" },
+  { icon: "/wordpress.svg", language: "Wordpress" },
+  { icon: "/wix.svg", language: "Wix" },
+  { icon: "/figma.svg", language: "Figma" },
+  { icon: "/vercel.svg", language: "Vercel" },
+  { icon: "/git.svg", language: "Git" },
+  { icon: "/github.svg", language: "GitHub" },
+  { icon: "/linux.svg", language: "Linux" }
 ];
 
 const ToggleButton = ({ 
