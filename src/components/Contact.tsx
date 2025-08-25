@@ -76,7 +76,7 @@ const Contact = () => {
                 Acesse minhas redes:
               </h2>
               <p className="text-gray-400  mb-7">
-                Me conte mais como posso te ajudar!
+                Entre em contato e vamos criar algo juntos!
               </p>
               <SocialLinks />
             </div>
